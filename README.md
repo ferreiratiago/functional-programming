@@ -18,3 +18,15 @@ $ babel index.js | node
 **We call impure functions those who depend on an outside state**. This relation may cause the output to change for the same input making impure functions unpredictable. This reason makes it hard to analyze and optimize impure functions at compile time.
 
 When writing pure functions developers only need to concern about the functions' body. All the outside state is irrelevant.
+
+## Function Composition
+
+**Function composition is it called when we pick two pure functions into one.** Because pure functions do not depended on the outside state its composition function perfectly beautiful. The end result will be the value after being handle by the two functions.
+
+We can see composition as the use of the proposition `"of"`. On the composition of the two functions `add1` and `times2`, translated into `add1(times2(v))`, we say `adding 1 of the times 2 of v`.
+
+The trick about composition is that executes its functions in the opposite order. The composition of `add1(times2(v))` will execute first `times2` and then `add1`.
+
+**Composition is a great alternative to oriented inheritance.** See [Mattias Petter Johansson](https://twitter.com/mpjme) [talk](https://www.youtube.com/watch?v=wfMtDGfHWpA) about it.
+
+On composition you should definitely explore [Ramda](http://fr.umio.us/why-ramda/).
