@@ -30,3 +30,19 @@ The trick about composition is that executes its functions in the opposite order
 **Composition is a great alternative to oriented inheritance.** See [Mattias Petter Johansson](https://twitter.com/mpjme) [talk](https://www.youtube.com/watch?v=wfMtDGfHWpA) about it.
 
 On composition you should definitely explore [Ramda](http://fr.umio.us/why-ramda/).
+
+## Function Currying
+
+**Currying is when we call a function with fewer arguments than what it needs and a new function (able to accept the remaining arguments) is returned.**
+
+In the example bellow we created a curry function called `addc` and then use it to create the function `add5to`.
+
+```js
+var R = require('ramda');
+const addc = R.curry((a,b) => a + b);
+const add5to = addc(5);
+```
+
+In fact `add5to` translates to `(b) => 5 + b`. This is because by running `addc(5)`, and because it is a curry function, it returns a new curry function with the reaming arguments to be handled.
+
+To know more about currying go to [github project](https://github.com/dominictarr/curry). Also read this [good article](https://hughfdjackson.com/javascript/why-curry-helps/).
