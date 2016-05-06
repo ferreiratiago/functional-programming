@@ -1,3 +1,4 @@
+require("babel-polyfill");
 /* Pure Function */
 // add2 function always produces the same output for the same input
 const add2 = (v) => v + 2;
@@ -31,8 +32,12 @@ const add5to = addc(5);
 console.log(add5to(2), 7);
 
 const users = [{name: 'chet', age:25}, {name:'joe', age:24}]
-console.log(R.pipe(
-    R.sortBy(R.prop('age')),
-    R.map(R.prop('name')),
-    R.join(', ')
-)(users));
+// console.log(R.pipe(
+//     R.sortBy(R.prop('age')),
+//     R.map(R.prop('name')),
+//     R.join(', ')
+// )(users));
+
+/* Functors */
+// objects that implement the map function
+const array = [1,2,3,4,5,6];

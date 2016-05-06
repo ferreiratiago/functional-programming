@@ -46,3 +46,7 @@ const add5to = addc(5);
 In fact `add5to` translates to `(b) => 5 + b`. This is because by running `addc(5)`, and because it is a curry function, it returns a new curry function with the reaming arguments to be handled.
 
 To know more about currying go to [github project](https://github.com/dominictarr/curry). Also read this [good article](https://hughfdjackson.com/javascript/why-curry-helps/).
+
+## Functors
+
+Functors are objects that implement the `map` method. The most used example for functor is the object `Array`, i.e. `[]`.
